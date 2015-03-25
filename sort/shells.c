@@ -2,17 +2,7 @@
 
 int main()
 {
-	int sz = sizeof(sample)/sizeof(sample[0]);
-	printf ("----------\n");
-	print(sample, sz);
-	printf("\n");
-	
-	sort(sample, sz);
-
-	printf ("----------\n");
-	print(sample, sz);
-	printf("\n");
-
+	do_test();
 	return 0;
 }
 

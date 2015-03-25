@@ -1,64 +1,32 @@
-#include <stdio.h>
+#include "comm.h"
 
-int sample[] = {2, -1, 8, 3, 5, 20, -100};
-
-void print(int arr[], int len)
+int main()
 {
-	int i = 0;
-	for (; i < len; i ++) {
-		printf ("%d ", arr[i]);
-	}
+	do_test();
+	return 0;
 }
 
-void s() 
+void sort(int data[], int sz)
 {
-	int sz = sizeof(sample)/sizeof(sample[0]);
-	int i =0, j =0;
+	int i = 0, j = 0;
 	int tmp;	
 	int cnt = 0;
-
-	printf ("len: %d\n", sz);
-
-	printf("------\n");
-	print(sample, sz);
-	printf("\n");
 
 	for(i = 0; i < sz; i ++) 
 	{	
 		for (j = i + 1; j < sz; j ++) 
 		{				
 			++ cnt;
-			if (sample[i] > sample[j]) 
+			if (data[i] > data[j]) 
 			{
-				tmp = sample[i];
-				sample[i] = sample[j];
-				sample[j] = tmp;
+				swap(&data[i], &data[j]);
 			}	
 		}
 
 		printf("%d*****", i);
-		print(sample, sz);
+		print(data, sz);
 		printf("\n");
 	}
-
-	printf("------\n");
-	print(sample, sz);
-	printf("\n");
-	printf("counter: %d\n", ++cnt);
-}
-
-// wrong! array as parameter for function degrade to pointer!
-print_arr_len(int arr[]) 
-{
-	#define  Array_Len(array)   (sizeof(array) / sizeof(array[0]))
-	printf("arr len: %d\n", Array_Len(arr));
-}
-
-int main()
-{
-	s();
-	//print_arr_len(sample);
-	return 0;
 }
 
 

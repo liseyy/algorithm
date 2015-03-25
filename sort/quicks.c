@@ -2,34 +2,16 @@
 
 int main()
 {
-	int sz = sizeof(sample)/sizeof(sample[0]);
-	printf("---------\n");
-	print(sample, sz);
-	printf("\n");
-
-	sort(sample, sz);
-
-	printf("---------\n");
-	print(sample, sz);
-	printf("\n");
-
+	do_test();
 	return 0;
 }
 
-int choose_pivot(int i, int j )
+static int choose_pivot(int i, int j )
 {
    return((i+j) /2);
 }
 
-void swap(int *x, int *y)
-{
-   int temp;
-   temp = *x;
-   *x = *y;
-   *y = temp;
-}
-
-void quicksort(int list[], int m, int n)
+static void quicksort(int list[], int m, int n)
 {
 	int key, i, j, k;
 	int temp;
