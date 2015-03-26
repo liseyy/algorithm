@@ -15,7 +15,10 @@ select=selects
 insertobj=inserts.o comm.o
 insert=inserts
 
-all: $(pop) $(shell) $(quick) $(select) $(insert)
+heapobj=heaps.o comm.o
+heap=heaps
+
+all: $(pop) $(shell) $(quick) $(select) $(insert) $(heap)
 
 $(pop): $(popsobj)
 	$(CC) -o $(pop) $(popsobj)
@@ -32,8 +35,12 @@ $(select): $(selectobj)
 $(insert): $(insertobj)
 	$(CC) -o $(insert) $(insertobj)
 
+$(heap): $(heapobj)
+	$(CC) -o $(heap) $(heapobj)
+
 comm.o: comm.c comm.h
 
 .PHONY: clean
 clean:
-	rm -rf $(pop) $(shell) $(quick) $(select) $(insert) *.o
+	rm -rf $(pop) $(shell) $(quick) $(select) $(insert) $(heap) *.o
+
