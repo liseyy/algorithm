@@ -1,10 +1,6 @@
 #include "comm.h"
 
-int main()
-{
-	do_test();
-	return 0;
-}
+MAIN
 
 void sort(int a[], int n)
 {
@@ -35,8 +31,8 @@ void sort(int a[], int n)
 }
 
 /*
-n**1.2
- 希尔排序(Shell Sort)是插入排序的一种 是针对直接插入排序算法的改进
+O(n**1.2)
+希尔排序(Shell Sort)是插入排序的一种 是针对直接插入排序算法的改进
 
 算法先将要排序的一组数按某个增量gap分成若干组，每组中
 记录的下标相差gap.对每组中全部元素进行排序，然后再用一个较小的增量

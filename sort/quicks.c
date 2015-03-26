@@ -1,10 +1,6 @@
 #include "comm.h"
 
-int main()
-{
-	do_test();
-	return 0;
-}
+MAIN
 
 static int choose_pivot(int i, int j )
 {

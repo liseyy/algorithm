@@ -6,7 +6,9 @@
 #define  array_len(array) (sizeof(array) / sizeof(array[0]))
 #define MAX_SAMPLE_SZ 100
 
-int sample[MAX_SAMPLE_SZ];// = {2, -1, 8, 3, 5, 20, -100};
+int sample[MAX_SAMPLE_SZ];
+
+#define MAIN int main() { do_test(); return 0; }
 
 void swap(int *x, int *y);
 void print(int arr[], int len);

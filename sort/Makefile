@@ -9,7 +9,13 @@ shell=shells
 quickobj=quicks.o comm.o
 quick=quicks
 
-all: $(pop) $(shell) $(quick)
+selectobj=selects.o comm.o
+select=selects
+
+insertobj=inserts.o comm.o
+insert=inserts
+
+all: $(pop) $(shell) $(quick) $(select) $(insert)
 
 $(pop): $(popsobj)
 	$(CC) -o $(pop) $(popsobj)
@@ -20,9 +26,14 @@ $(shell): $(shellobj)
 $(quick): $(quickobj)
 	$(CC) -o $(quick) $(quickobj)
 
-pops.o: pops.c comm.h
+$(select): $(selectobj)
+	$(CC) -o $(select) $(selectobj)
+
+$(insert): $(insertobj)
+	$(CC) -o $(insert) $(insertobj)
+
 comm.o: comm.c comm.h
 
 .PHONY: clean
 clean:
-	rm -rf $(pop) $(shell) $(quick) *.o
+	rm -rf $(pop) $(shell) $(quick) $(select) $(insert) *.o
