@@ -1,5 +1,9 @@
 #include "comm.h"
 
+#define INIT_SZ 7
+
+int sample[] = {2, -1, 8, 3, 5, 20, -100};
+
 void print(int arr[], int len)
 {
 	int i = 0;
@@ -11,16 +15,16 @@ void print(int arr[], int len)
 
 void do_test()
 {
-	// int sz = sizeof(sample)/sizeof(sample[0]);
-	// printf ("----------\n");
-	// print(sample, sz);
-	// printf("\n");
+	int sz = INIT_SZ;
+	printf ("----------\n");
+	print(sample, sz);
+	printf("\n");
 	
-	// sort(sample, sz);
+	sort(sample, sz);
 
-	// printf ("----------\n");
-	// print(sample, sz);
-	// printf("\n");
+	printf ("----------\n");
+	print(sample, sz);
+	printf("\n");
 }
 
 void swap(int *x, int *y)
