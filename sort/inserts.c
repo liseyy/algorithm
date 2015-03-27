@@ -2,38 +2,6 @@
 
 MAIN
 
-#if 1
-void sort(int data[], int sz)
-{
-	int i, j, k, val;
-	int tmp;
-
-	for (i = 1; i < sz; i ++ )
-	{
-		val = data[i];
-		for (j = i - 1; j >= 0; ) 
-		{
-			if (val < data[j])
-			{
-				j --;
-			}
-			else
-			{
-				tmp = data[j];
-				data[j] = val;
-				data[j + 1] = tmp;
-				for (k = j + 2; k + 1 <= i; k ++) 
-				{
-					data[k + 1] = data[k];
-				}
-
-				break;
-			}
-		}
-	}
-}
-
-#else
 void sort(int data[], int sz) 
 {
 	int i, j, t;
@@ -53,7 +21,6 @@ void sort(int data[], int sz)
 		data[j + 1] = t; /*找到下标为i的数的放置位置*/
 	}
 }
-#endif 
 
 /*功能：直接插入排序
 输入：数组名称（也就是数组首地址）、数组中元素个数

@@ -4,9 +4,10 @@ MAIN
 
 static int choose_pivot(int i, int j )
 {
-   return((i+j) /2);
+   return ((i + j) / 2);
 }
 
+#if 0
 static void quicksort(int list[], int m, int n)
 {
 	int key, i, j, k;
@@ -22,18 +23,55 @@ static void quicksort(int list[], int m, int n)
 		while(i <= j)
 		{
 			while((i <= n) && (list[i] <= key))
-				i++;
+				i ++;
 			while((j >= m) && (list[j] > key))
-				j--;
+				j --;
 			if( i < j) 
 				swap(&list[i], &list[j]);
 		}
 		swap(&list[m], &list[j]);
 
-		quicksort(list, m, j-1);
-		quicksort(list, j+1, n);
+		quicksort(list, m, j - 1);
+		quicksort(list, j + 1, n);
 	}
 }
+#else
+static void quicksort(int list[], int m, int n)
+{
+	int key, low, high;
+	if (low < high) 
+	{
+		key = list[m];
+		low = m, high = n;
+
+		while (low < high) 
+		{
+			while (low < high && list[high] >= key) 
+			{
+				high --;
+			}
+			if (low < high) 
+			{
+				list[low] = list[high];
+				low ++;
+			}
+
+			while(low < high && list[low] < key) 
+			{
+				low ++;
+			}
+			if (low < high) 
+			{
+				list[high] = list[low];
+				high --;
+			}
+		}
+		list[low] = key;
+		quicksort(list, m, low - 1);
+		quicksort(list, low + 1, n);
+	}
+}
+#endif 
 
 void sort(int arr[], int len)
 {
