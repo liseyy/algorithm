@@ -2,7 +2,8 @@
 
 #define INIT_SZ 7
 
-int sample[] = {2, -1, 8, 3, 5, 20, -100};
+//int sample[] = {2, -1, 8, 3, 5, 20, -100};
+int sample[] = {2, -100, 8, 3, 5, 20, -1};
 
 void print(int arr[], int len)
 {
