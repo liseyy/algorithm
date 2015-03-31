@@ -39,7 +39,7 @@ static void quicksort(int list[], int m, int n)
 static void quicksort(int list[], int m, int n)
 {
 	int key, low, high;
-	if (low < high) 
+	if (m < n) 
 	{
 		key = list[m];
 		low = m, high = n;
