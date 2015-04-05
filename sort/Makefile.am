@@ -1,0 +1,9 @@
+AUTOMAKE_OPTIONS=foreign
+bin_PROGRAMS= heaps inserts merges pops quicks selects shells
+heaps_SOURCES= heaps.c comm.c
+inserts_SOURCES= inserts.c comm.c
+merges_SOURCES= merges.c comm.c
+pops_SOURCES= pops.c comm.c
+quicks_SOURCES= quicks.c comm.c
+selects_SOURCES= selects.c comm.c
+shells_SOURCES= shells.c comm.c

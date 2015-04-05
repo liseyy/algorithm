@@ -1,0 +1,3 @@
+AUTOMAKE_OPTIONS=foreign
+EXTRA_DIST= README.md TODO
+SUBDIRS=search sort
